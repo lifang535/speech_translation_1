@@ -41,6 +41,14 @@ When the modules are 1: 1: 2 or 1: 1: 3 for inference, the performance are worce
 
 2. There is not a single sub-request, because 1 audio ~ 1 string ~ 1 translated string ~ 1 translated audio.
 
-3. Use the `multiprocessing.set_start_method("spawn")` to prevent errors in my last code of traffic monitoring, but the sub processes start slowly. When the modules are 1: 1: 1 for inference, the cold start of all modules is about 20 seconds. And when setting this, `multiprocessing.lock()` causes error.
+3. Use the `multiprocessing.set_start_method("spawn")` to prevent errors in my last code of traffic monitoring, but the sub processes start slowly. When the modules are 1: 1: 1 for inference, the cold start of all modules is about 20 seconds. And when setting this, `multiprocessing.lock()` causes error: 
+```
+Traceback (most recent call last):
+  File "pipeline.py", line 19, in <module>
+    multiprocessing.set_start_method("spawn")
+  File "/opt/conda/envs/base_copy_1/lib/python3.7/multiprocessing/context.py", line 242, in set_start_method
+    raise RuntimeError('context has already been set')
+RuntimeError: context has already been set
+```
 
 4. `CNtxt2CNaudio` is not use gpu to speed up operations.
