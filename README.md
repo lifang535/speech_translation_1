@@ -37,7 +37,7 @@ When the modules are 1: 1: 2 or 1: 1: 3 for inference, the performance are worce
 
 ## questions
 
-1. Combine `ESaudio2EStxt` and `EStxt2ENtxt` to `ESaudio2ENtxt` with the model openai/whisper-large.
+1. Combine `ESaudio2EStxt` and `EStxt2ENtxt` to `ESaudio2ENtxt` with the model openai/whisper-large. Actually, like ES, these languages need not Relay Translation, but what need to, like Javanese, is difficult to find appropriate models to make pipeline. So just use ES to simulate.
 
 2. There is not a single sub-request, because 1 audio ~ 1 string ~ 1 translated string ~ 1 translated audio.
 
