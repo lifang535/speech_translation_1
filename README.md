@@ -37,7 +37,7 @@ latency:       [5.491, 3.444, 3.651, 3.511, 2.344, 2.283, 2.540, 4.539, 4.711, 4
 ```
 
 Throughout:
-·```
+```
 throughout of ESaudio2ENtxt ≈ 1.29 req/s
 
 throughout of ENtxt2CNtxt ≈ 9.65 req/s
